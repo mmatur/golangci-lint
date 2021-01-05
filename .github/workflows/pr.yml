@@ -29,6 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Check go mod
+        run: go mod tidy
       - name: lint
         uses: golangci/golangci-lint-action@v2.3.0
         with:
